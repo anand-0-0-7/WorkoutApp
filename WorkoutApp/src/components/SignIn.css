@@ -1,0 +1,69 @@
+.juggling-header {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    height: 100px; /* Adjust height to avoid page shifting */
+    position: relative; /* To control position of texts */
+    overflow: hidden; /* Hide overflowing text */
+  }
+  
+  .juggling-text {
+    font-size: 2rem;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; /* Bold look for stronger presence */
+    position: absolute;
+    width: 100%;
+    animation: jugglingAnimation 9s infinite;
+    opacity: 0; /* Initially hidden */
+  }
+  
+  .juggling-text:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .juggling-text:nth-child(2) {
+    animation-delay: 3s;
+  }
+  
+  .juggling-text:nth-child(3) {
+    animation-delay: 6s;
+  }
+  
+  @keyframes jugglingAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    20% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    30% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .signin-background {
+    background-image: url('src\\assets\\Images\\WourkOutSignin.jpg'); /* Path to your image */
+    background-size: cover;  /* Ensures the image covers the entire area */
+    background-position: center;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    width: 100vw;
+    height: 100vh;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-container {
+    opacity: 0.8;
+ }
