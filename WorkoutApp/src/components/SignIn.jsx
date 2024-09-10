@@ -23,6 +23,10 @@ function SignIn({UserLogo, PswrdLogo}) {
             });
 
             if (response.ok) {
+                const responseData = await response.json();
+                const { userId } = responseData;
+                // Store the UserId in sessionStorage
+                sessionStorage.setItem('UserId', userId);
                 navigate("/home");
             } else {
                 const errorData = await response.text();
@@ -48,7 +52,7 @@ function SignIn({UserLogo, PswrdLogo}) {
         <div className="form-container">
             <h2>Login</h2>
             <form onSubmit={handleSignin}>
-                <div className="form-control">
+                <div className="form-control form-control-modified">
                     <input 
                         type="text" 
                         placeholder="Enter your email" 
@@ -57,7 +61,7 @@ function SignIn({UserLogo, PswrdLogo}) {
                     </input>
                     <UserLogo className="icon user"/>
                 </div>
-                <div className="form-control">
+                <div className="form-control form-control-modified">
                     <input 
                         type="password" 
                         placeholder="Enter your password" 

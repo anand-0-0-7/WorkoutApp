@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import './SignUp.css'
 
 function SignUp({UserLogo, PswrdLogo}) {
     const [User, setUser] = useState("");
@@ -45,7 +46,7 @@ function SignUp({UserLogo, PswrdLogo}) {
       <div className="form-container">
           <h2>SignUp</h2>
           <form onSubmit={handleSignup}>
-              <div className="form-control">
+              <div className="form-control form-control-modified">
                   <input 
                     type="text" 
                     placeholder="Enter your username"
@@ -54,7 +55,7 @@ function SignUp({UserLogo, PswrdLogo}) {
                 </input>
                   <UserLogo className="icon user"/>
               </div>
-              <div className="form-control">
+              <div className="form-control form-control-modified">
                   <input 
                     type="text" 
                     placeholder="Enter your email" 
@@ -63,7 +64,7 @@ function SignUp({UserLogo, PswrdLogo}) {
                 </input>
                   <MdEmail className="icon user"/>
               </div>
-              <div className="form-control">
+              <div className="form-control form-control-modified">
                   <input 
                     type="password" 
                     placeholder="Enter your password"

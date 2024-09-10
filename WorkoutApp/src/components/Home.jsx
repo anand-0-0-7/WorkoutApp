@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Home.css'; // Custom styles for the Home page
+import WorkoutEntryForm from './WorkoutEntryForm';
+import Graph from './Graph';
 
 function Home() {
     const location = useLocation();
@@ -21,6 +23,8 @@ function Home() {
     // Handle logout and redirect
     const handleLogout = () => {
         // Perform any necessary cleanup (e.g., remove tokens, clear state, etc.)
+        sessionStorage.removeItem('UserId'); // Remove UserId from sessionStorage
+        console.log('User logged out and session storage cleared');
         // Redirect to sign-in page
         navigate('/signin');
     }
@@ -50,8 +54,12 @@ function Home() {
             {/* Content Area */}
             <div className="content-area">
                 {activeTab === 'home' && <h1>Welcome to Home Page</h1>}
-                {activeTab === 'workout' && <h1>Workout Entry Section</h1>}
-                {activeTab === 'graphs' && <h1>Graphs Section</h1>}
+                {activeTab === 'workout' && (
+                <div>
+                    <WorkoutEntryForm />
+                </div>
+                )}
+                {activeTab === 'graphs' && (<div><Graph /></div>)}
             </div>
         </div>
     );
